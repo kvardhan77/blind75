@@ -1,0 +1,35 @@
+
+// O(n logn) ,  using sorting , initial idea
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+    sort(nums.begin() , nums.end());
+    for(int i = 0 ; i < n-1 ; i++)
+    {
+      if(nums[i] == nums[i+1]
+      return true;
+    }
+    return false;
+    
+    }
+}
+
+// O(n) , using hashmaps , updated
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+    unordered_maps <int , int> nummap;
+
+    for(int num :nums)
+    {
+      if(nummap[num] >0)
+      {
+        return true;
+      }
+      nummap[num]++;
+      
+    
+    }
+    }
+}
