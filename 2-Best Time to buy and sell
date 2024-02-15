@@ -1,0 +1,23 @@
+// takes O(N) time
+
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+
+    int lsf = prices[0];
+    int max = 0
+  for(int  i = 1 ; i < prices.size() ; i++)
+  {
+    if(prices[i] - lsf > max)
+    {
+      max = prices[i] - lsf;
+    }
+    if(prices[i] < lsf)
+    {
+        lsf = prices[i];
+    }
+    return max;
+  
+  }  
+    }
+}
