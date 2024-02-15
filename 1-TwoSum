@@ -1,3 +1,6 @@
+...-...
+//Time complexity = O(n^2) , brute force , initial instinct
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -20,5 +23,31 @@ public:
     
      
 };
+
+
+//time complexity = O(n Log n) , used sorting , imrpoved version
+
+vector<int> twoSum(vector<int>& nums, int target) {
+            
+    unordered_map <int , int> sol;
+    for(int i = 0 ; i < nums.size() ; i++)
+    {
+         sol[nums[i] = i;
+    }
+
+    int complement;
+    for(int i = 0 ; i < nums.size() ; i++)
+    {
+        complement = target - nums[i];
+        if(sol.count(complement) >0 && sol[complement] != i)
+        {
+            return {i , sol[complement]};
+        }
+    }
+    return {};
+}
+
+
+
 
 
