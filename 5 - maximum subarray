@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int prevmax = nums[0];
+        int max = nums[0];
+        for(int i = 1; i < nums.size() ; i++)
+        {
+            if(prevmax > 0 )
+            {
+                prevmax+= nums[i];
+                //cout << nums[i] << " " << prevmax << endl;
+            }
+            else
+            {
+                prevmax = nums[i];
+               // cout << nums[i] << " " << prevmax << endl;
+            }
+            if(prevmax > max)
+            {
+                max = prevmax;
+            }
+            
+        }
+        return max;
+
+    }
+};
